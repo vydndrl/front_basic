@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>글쓰기</h1>
+
+    <form action="https://naver/com" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="title">제목</label>
+        <input type="text" name="title" id="title" />
+      </div>
+
+      <div>
+        <label for="contents">내용</label> <br />
+        <textarea
+          name="contents"
+          id="contents"
+          rows="20"
+          cols="50"
+          placeholder="내용을 입력해주세요."
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="appointment">예약여부</label>
+        <input type="radio" name="appointment" id="appointment" value="yes" /> Yes
+        <input type="radio" name="appointment" id="appointment" value="no" /> No
+      </div>
+
+      <div>
+        <label for="appointment-time">예약등록시간</label>
+        <input type="datetime-local" name="appointment-time" id="appointment-time" />
+      </div>
+
+      <input type="submit" value="제출하기" />
+    </form>
+  </body>
+</html>

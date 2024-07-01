@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML BASIC 1</title>
+    <style></style>
+  </head>
+  <!-- <body style="background-color: red;"> -->
+  <!-- <body background="images/background_image.jpg"> -->
+  <body>
+    <h2>글자 styling 예제</h2>
+    <!-- 인라인 스타일링 -->
+    <p style="background-color: red">1. 배경색 변경</p>
+    <p style="color: blue">2. 글자색 변경</p>
+    <p style="font-size: 20px">3. 글자크기 변경</p>
+    <p style="background-color: blue; font-size: 25px; text-align: center">
+      4. 복합 스타일링
+    </p>
+
+    <h2>link와 이미지 삽입</h2>
+    <!-- _blank: 새탭으로 이동 -->
+    <div>
+      <a href="https://naver.com" target="_blank">네이버</a>
+    </div>
+
+    <div>
+      <a href="https://naver.com" target="_blank">
+        <!-- alt : 이미지가 깨졌을 때 대체 문자열, 시각장애인용 reader기에서 인식 -->
+        <img
+          src="https://post-phinf.pstatic.net/MjAyMTA4MDRfMTgy/MDAxNjI4MDY1MzQxODAx.frCmxzTvSQU_8XHL4yRYtZXacDfxFMQgAbRTFAAQg-Mg._PxuN5IpY_z32VWnn3pBISIb72BEylE0MPIgh2Ak_KEg.JPEG/shutterstock_122755672.jpg?type=w1200"
+          width="320px"
+          height="200px"
+          style="border: 5px solid black"
+          alt="구름"
+        />
+      </a>
+    </div>
+
+    <h2>리스트(ol - 순서가 있는, ul - 순서가 없는)</h2>
+    <ol style="list-style-type: upper-roman">
+      <li>아이템 A</li>
+      <li>아이템 B</li>
+      <li>아이템 C</li>
+    </ol>
+    <ul style="list-style-type: square">
+      <li>아이템 A</li>
+      <li>아이템 B</li>
+      <li>아이템 C</li>
+    </ul>
+
+    <h2>테이블 예제</h2>
+    <table border="1" style="border-collapse: collapse">
+      <caption>
+        테이블 명
+      </caption>
+      <thead>
+        <tr>
+          <th>컬럼1</th>
+          <th>컬럼2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>내용1</td>
+          <td>내용2</td>
+        </tr>
+        <tr>
+          <td>내용A</td>
+          <td>내용B</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 테이블 만들기 실습 -->
+    <!-- 테이블 명은 post: id, title, contents, author_email
+      요소와 데이터를 가진 테이블 생성 -->
+
+    <table border="1" style="border-collapse: collapse">
+      <caption>
+        post
+      </caption>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>title</th>
+          <th>contents</th>
+          <th>author_email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>hong</td>
+          <td>hongildong1</td>
+          <td>hello</td>
+          <td>hong@naver.com</td>
+        </tr>
+        <tr>
+          <td>hong2</td>
+          <td>hongildong2</td>
+          <td>hello</td>
+          <td>hong2@naver.com</td>
+        </tr>
+        <tr>
+          <td>hong3</td>
+          <td>hongildong3</td>
+          <td>hello</td>
+          <td>hong3@naver.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
