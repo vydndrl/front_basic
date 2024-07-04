@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+    <script>
+      function calc() {
+        const firstNum = Number(document.getElementById("firstNum").value);
+        const secondNum = Number(document.getElementById("secondNum").value);
+        const calc = document.getElementById("calculator");
+        const resultSpan = document.getElementById("result");
+        let total = 0;
+
+        if (calc.value == "plus") {
+          total = firstNum + secondNum;
+        } else if (calc.value == "minus") {
+          total = firstNum - secondNum;
+        } else if (calc.value == "multiply") {
+          total = firstNum * secondNum;
+        } else if (calc.value == "divide") {
+          total = firstNum / secondNum;
+        }
+
+        resultSpan.innerHTML = "은 " + total + " 입니다.";
+      }
+    </script>
+  </head>
+  <body>
+    <h2>계산기 프로그램 구현</h2>
+    <div>
+      <!-- 사용자로부터 사칙연산을 선택 -->
+      <label>사칙연산선택</label>
+      <select id="calculator">
+        <option value="plus">덧셈</option>
+        <option value="minus">뺄셈</option>
+        <option value="multiply">곱셈</option>
+        <option value="divide">나눗셈</option>
+      </select>
+      <input type="text" id="firstNum" placeholder="값을 입력해주세요." />
+      <input type="text" id="secondNum" placeholder="값을 입력해주세요." />
+      <button onclick="calc()">연산실행</button>
+    </div>
+    <div>결과값<span id="result"></span></div>
+  </body>
+</html>
