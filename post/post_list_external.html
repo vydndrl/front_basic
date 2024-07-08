@@ -10,7 +10,7 @@
     />
   </head>
   <body>
-    <object style="width: 100%" data="../common/header.html" type="text/html"></object>
+    <object style="width: 100%" data="header.html" type="text/html"></object>
     <!-- container : 부스트랩의 컨테이너 클래스는 페이지의 내용을 
      중앙에 정렬하고 양쪽에 패딩을 추가하고 내용을 감싸는 역할 -->
     <div class="container">
@@ -22,9 +22,10 @@
       <table class="table">
         <thead>
           <tr>
+            <th>user id</th>
             <th>id</th>
             <th>title</th>
-            <th>contents</th>
+            <th>body</th>
           </tr>
         </thead>
         <tbody id="bodyData"></tbody>
@@ -34,15 +35,16 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       async function serverData() {
-        const response1 = await axios.get("http://localhost:8081/post/list");
+        const response1 = await axios.get("https://jsonplaceholder.typicode.com/posts/");
         const allData = response1.data;
         let bodyData = document.getElementById("bodyData");
-        for (let i = 0; i <= allData.length; i++) {
+        for (let i = 1; i <= allData.length; i++) {
+          const userId = allData[i].userId;
           const id = allData[i].id;
           const title = allData[i].title;
-          const contents = allData[i].contents;
+          const body = allData[i].body;
 
-          bodyData.innerHTML += `<tr><td>${id}</td><td>${title}</td><td>${contents}</td><tr>`;
+          bodyData.innerHTML += `<tr><td>${userId}</td><td>${id}</td><td>${title}</td><td>${body}</td><tr>`;
         }
       }
       serverData();

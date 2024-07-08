@@ -12,8 +12,8 @@
   <body>
     <object style="width: 100%" data="../common/header.html" type="text/html"></object>
     <div class="container">
-      <div class="page-header"><h3>게시글 상세조회</h3></div>
-      <input type="text" id="postId" />
+      <div class="page-header"><h3>회원상세조회</h3></div>
+      <input type="text" id="authorId" />
       <button class="btn btn-primary" onclick="serverData()">조회</button>
       <table class="table">
         <tr>
@@ -21,12 +21,16 @@
           <td id="id"></td>
         </tr>
         <tr>
-          <td>title</td>
-          <td id="title"></td>
+          <td>name</td>
+          <td id="name"></td>
         </tr>
         <tr>
-          <td>contents</td>
-          <td id="contents"></td>
+          <td>email</td>
+          <td id="email"></td>
+        </tr>
+        <tr>
+          <td>password</td>
+          <td id="password"></td>
         </tr>
       </table>
     </div>
@@ -34,11 +38,15 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       async function serverData() {
-        const postId = document.getElementById("postId").value;
-        const response1 = await axios.get("http://localhost:8081/post/detail/" + postId);
+        const authorId = document.getElementById("authorId").value;
+        const response1 = await axios.get(
+          "http://localhost:8081/author/detail/" + authorId
+        );
+
         document.getElementById("id").innerHTML = response1.data.id;
-        document.getElementById("title").innerHTML = response1.data.title;
-        document.getElementById("contents").innerHTML = response1.data.contents;
+        document.getElementById("name").innerHTML = response1.data.name;
+        document.getElementById("email").innerHTML = response1.data.email;
+        document.getElementById("password").innerHTML = response1.data.password;
       }
       serverData();
     </script>
